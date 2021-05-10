@@ -1,0 +1,25 @@
+<div class='oui'>
+  <div>
+  <% if params[:answer] == "I am going to work"%>
+    <h1>Great</h1>
+  <% elsif params[:answer].include?("?")%>
+    <h1>Silly question, get dressed and go to work!</h1>
+  <% elsif params[:answer] == ""%>
+    <h1>YOU ASKED NOTHING</h1>
+  <% else %>
+    <h1> I don't care, get dressed and go to work!</h1>
+  <% end %>
+  </div>
+  <%= link_to "ask another question", ask_path %>
+</div>
+<style>
+a {
+  text-decoration: none;
+  color: red
+}
+.oui{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+</style>
